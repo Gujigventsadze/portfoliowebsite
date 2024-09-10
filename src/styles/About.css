@@ -1,0 +1,68 @@
+.about-container {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    padding: 10rem 5rem 0 5rem;
+}
+.left-side {
+    flex: 1;
+}
+
+.welcome {
+    color: white;
+    font-size: 4rem;
+    font-family: "Bebas Neue", sans-serif;
+}
+.welcome p {
+    margin: 0;
+}
+
+.right-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-side img {
+    height: 80%;
+    position: relative; /* Required for the animation to work */
+    animation: float 10s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(40px, -40px);
+    }
+    50% {
+        transform: translate(-50px, 10px);
+    }
+    75% {
+        transform: translate(60px, 50px);
+    }
+    100% {
+        transform: translate(-20px, -70px);
+    }
+}
+
+@media (max-width: 769px) {
+    .about-container {
+        flex-direction: column;
+        padding: 10rem 2rem 0 2rem;
+    }
+}
+
+@media (max-width: 426px) {
+    .right-side img {
+        height: 200px;
+    }
+    .about-container {
+        gap: 5rem;
+    }
+    .type-animation {
+        font-size: 1.5rem !important;
+    }
+}

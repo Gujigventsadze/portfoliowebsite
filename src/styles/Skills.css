@@ -1,0 +1,75 @@
+#skills {
+    margin-top: 10rem;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#skills h2 {
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    margin: 10px 0;
+    letter-spacing: 1px;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.skills {
+    width: 75%;
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.708);
+    margin-bottom: 20vh;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(to left,transparent, rgba(0, 0, 0, 0.9));
+    z-index: 100;
+}
+.skills::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(to right,transparent, rgba(0, 0, 0, 0.9));
+    z-index: 100;
+}
+
+.skills:hover .skills-slide {
+    animation-play-state: paused;
+}
+
+.skills-slide {
+    white-space: nowrap;
+    animation: 30s slide infinite linear;
+}
+
+.skills-slide img {
+    height: 20vh;
+    background-color: transparent;
+    margin: 0 40px;
+}
+

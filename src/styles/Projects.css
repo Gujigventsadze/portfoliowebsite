@@ -1,0 +1,66 @@
+#projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.projects-title {
+    color: white;
+    font-size: 3rem;
+    font-family: "Bebas Neue", sans-serif;
+    margin: 10rem 0 3rem 0;
+}
+
+.projects-container {
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 2rem;
+}
+
+@media (max-width: 1025px) {
+    .projects-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media(max-width: 321px) {
+    .projects-container {
+        width: 90%;
+    }
+}
+
+.full-list-button button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    height: 4rem;
+    width: 12rem;
+    margin-top: 5rem;
+    font-size: 1.5rem;
+    font-family: "Bebas Neue", sans-serif;
+    border-radius: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.full-list-button button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #8A2387;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    transition: width 0.4s ease-in-out;
+    z-index: -1;
+}
+
+.full-list-button button:hover::before {
+    width: 100%;
+}
